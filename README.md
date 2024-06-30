@@ -16,5 +16,9 @@
 - `pygame` 提供优秀的音频播放🎶
 - `edge-tts` 提供极其优秀的音频输出体验，非常棒🎉
 - `markdown` 提供极为优秀的markdown转HTML体验🥰
+- `subprocess` 成功地在不堵塞程序的情况下完成了音频的命令行生成👍
+- `time`and`os` 出色地完成了任务🎆
 
-此外，[`edge-tts`](https://github.com/rany2/edge-tts) 库在GitHub上是开源的！
+[`edge-tts`](https://github.com/rany2/edge-tts) 库、[`markdown`](https://github.com/Python-Markdown/markdown)库以及[`pygame`](https://github.com/pygame/pygame)在GitHub上是开源的！
+
+此外，为程序提供AI服务的[`ChatGLM`](https://github.com/THUDM/ChatGLM-6B)在GitHub上也是开源的！
