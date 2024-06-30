@@ -1,14 +1,23 @@
 import zhipuai
 import webview
-import functions
+import cut_answer
+import create_audio
+from threading import Thread
 
 api_key = input("API_KEY: ")
-zhipuai.api_key = api_key
+client = zhipuai.ZhipuAI(api_key=api_key)
 
 
-problem = functions.get_text("user", input("Input your problem: "))
-answer = zhipuai.model_api.invoke(model="glm-4", prompt=problem)
+problem = input("Input your problem: ")
+answer = client.chat.completions.create(model="glm-4-air", messages=[
+    {"role": "system", "content": "You are a cheerful foreign friend and your task is to use English throughout the "
+                                  "conversation with the user and correct the user's mistakes in a timely manner"},
+    {"role": "user", "content": problem}
+])
+answer = answer.choices[0].message.content
 
-
-webview.create_window('Answer', html=functions.cut_answer(answer['data']['choices'][0]['content']), width=1500, height=1500)
+play_audio = Thread(target = create_audio.play_audio, args=(answer, ))
+play_audio.start()
+webview.create_window('Answer', html=functions.cut_answer(answer), width=1000, height=1000)
 webview.start()
+play_audio.join()
