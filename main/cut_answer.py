@@ -1,10 +1,6 @@
 import markdown
 
 
-def get_text(role, content):
-    return [{"role": role, "content": content}]
-
-
 def cut_answer(cut):
     final = []
     html = ''
