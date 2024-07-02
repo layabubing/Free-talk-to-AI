@@ -8,6 +8,8 @@
 ## 更新日志
 - 24/6/29 开启项目并接入ChatGLM的API，实现基于webview的简单UI
 - 24/6/30 重构了main.py并添加create_audio.py，可以进行单句对话
+## 注意事项
+- 建议使用Windows 10/11运行程序，其他版本造成的意外结果请不要发布到issues里
 ## 鸣谢
 ### - Python第3方库：
 - `zhipuai` 提供便于使用的ChatGLM官方API接入库🤗
